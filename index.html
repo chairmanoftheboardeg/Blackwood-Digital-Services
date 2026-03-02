@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackwood Digital Services | Under Development</title>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/1hqpv2C/Icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <img src="https://i.ibb.co/1hqpv2C/Icon.png" alt="Blackwood Icon" class="loader-icon">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="https://i.ibb.co/F4rgcCRn/Logo.jpg" alt="Blackwood Digital Services Logo" class="main-logo">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="https://tylernicholasgroup.com" target="_blank" class="nav-btn">Parent Company</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container hero-section">
+            <div class="hero-text">
+                <span class="badge">A Tyler Nicholas Group Firm</span>
+                <h1>Building the Premier Operational Backbone.</h1>
+                <p class="subtitle">Our company and website are currently under development.</p>
+                <div class="divider"></div>
+                <p class="description">
+                    Blackwood Digital Services is laying the groundwork to provide the sophisticated infrastructure required for high-growth digital studios and virtual ecosystems to scale securely. 
+                </p>
+                <div class="cta-container">
+                    <p class="update-text">For the latest news and updates, please visit our parent organization:</p>
+                    <a href="https://tylernicholasgroup.com" target="_blank" class="primary-btn">Check Tyler Nicholas Group</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <img src="https://i.ibb.co/1hqpv2C/Icon.png" alt="Blackwood Icon" class="footer-icon">
+                <span class="footer-title">Blackwood Digital Services</span>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 Blackwood Digital Services. A Tyler Nicholas Group Firm. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader-wrapper');
+            // Add a slight delay to ensure the animation is seen and feels smooth
+            setTimeout(() => {
+                loader.classList.add('fade-out');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500); // Wait for transition to finish
+            }, 800);
+        });
+    </script>
+</body>
+</html>

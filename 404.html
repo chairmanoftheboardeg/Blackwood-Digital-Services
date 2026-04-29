@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Asset Not Found | BlackWood Digital Services</title>
+  <title>BDS - Digital Void | 404 Asset Unresolvable</title>
   
   <link rel="icon" href="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" />
   
@@ -47,7 +47,7 @@
     }
 
     .hero-glow {
-      background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.08) 0%, rgba(2, 6, 23, 0) 60%);
+      background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0%, rgba(2, 6, 23, 0) 60%);
     }
     
     ::-webkit-scrollbar { width: 8px; }
@@ -55,17 +55,43 @@
     ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
 
-    .blink {
-      animation: blinker 1s linear infinite;
+    /* Modern Blueprint Glow for the graphic */
+    .blueprint-void {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        border: 2px dashed #1e293b;
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 0 auto;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.1) inset;
     }
-    @keyframes blinker {
-      50% { opacity: 0; }
+
+    .blueprint-line {
+        position: absolute;
+        background: #1e293b;
+        opacity: 0.5;
+    }
+    .blueprint-line.h { width: 100%; height: 2px; }
+    .blueprint-line.v { width: 2px; height: 100%; }
+
+    .pulse-glow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
     }
   </style>
 </head>
 <body class="font-sans flex flex-col min-h-screen bg-grid">
 
-  <nav class="bg-bds-bg/95 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-lg sticky top-0 z-50 border-b border-bds-border">
+  <nav class="bg-bds-bg/95 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-lg sticky top-0 z-50 border-b border-bds-border shrink-0">
     <a href="/" class="flex items-center space-x-3 group">
       <img src="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" alt="BDS Logo" class="h-10 transition-transform group-hover:scale-105">
       <div class="font-bold text-lg tracking-wider text-white hidden lg:block">BlackWood Digital</div>
@@ -101,42 +127,42 @@
     </div>
   </div>
 
-  <main class="flex-grow w-full flex flex-col items-center justify-center hero-glow relative py-20 px-6">
+  <main class="flex-grow w-full flex flex-col items-center justify-center hero-glow relative px-6 py-20 text-center">
     
-    <div class="text-center z-10" data-aos="fade-up">
-      <div class="bg-bds-card/80 backdrop-blur-sm border border-bds-border rounded-xl max-w-2xl mx-auto shadow-2xl overflow-hidden">
-        
-        <div class="bg-bds-bg border-b border-bds-border px-4 py-2 flex items-center gap-2">
-          <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-          <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-          <div class="mx-auto text-[10px] text-gray-500 font-mono tracking-widest">SYS.ERR.404</div>
+    <div class="z-10 max-w-2xl mx-auto" data-aos="zoom-out">
+      
+      <div class="blueprint-void mb-10 group hover:border-bds-accent/40 transition-colors">
+        <div class="pulse-glow"></div>
+        <div class="blueprint-line h" style="top: 25%;"></div>
+        <div class="blueprint-line h" style="top: 50%;"></div>
+        <div class="blueprint-line h" style="top: 75%;"></div>
+        <div class="blueprint-line v" style="left: 25%;"></div>
+        <div class="blueprint-line v" style="left: 50%;"></div>
+        <div class="blueprint-line v" style="left: 75%;"></div>
+        <div class="absolute inset-0 flex items-center justify-center font-mono text-bds-accent font-bold text-lg tracking-widest opacity-80 group-hover:opacity-100 transition-opacity">
+          VOID
         </div>
+      </div>
+      
+      <div class="inline-block px-3 py-1 border border-bds-accent/30 rounded font-mono text-xs text-bds-accent mb-4 tracking-widest uppercase shadow-sm">
+        Error Code 404 | ASSET_UNRESOLVABLE
+      </div>
+      
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+        Digital Architecture Void Located.
+      </h1>
+      
+      <p class="text-lg text-gray-400 leading-relaxed mb-12 max-w-xl mx-auto font-light">
+        Our network scanners cannot map this coordinate. The digital asset is missing, has been structurally sanitized, or access is strictly unauthorized.
+      </p>
 
-        <div class="p-10 md:p-16">
-          <h1 class="text-7xl md:text-9xl font-mono font-bold text-bds-accent mb-4 opacity-90 drop-shadow-[0_0_15px_rgba(56,189,248,0.3)]">
-            404
-          </h1>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6 uppercase tracking-widest">
-            Asset Not Found
-          </h2>
-          
-          <div class="font-mono text-sm text-gray-400 mb-10 text-left bg-bds-bg/50 p-6 rounded border border-bds-border/50">
-            <p>> Establishing secure connection...</p>
-            <p>> Querying directory path...</p>
-            <p class="text-red-400">> ERROR: Target destination unreachable or restricted.</p>
-            <p>> The requested digital asset does not exist, has been moved, or clearance is denied. <span class="blink text-bds-accent">_</span></p>
-          </div>
-
-          <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <a href="/" class="bg-bds-accent hover:bg-bds-accentHover text-bds-bg font-bold py-3.5 px-8 rounded-lg transition-all w-full sm:w-auto shadow-[0_0_15px_rgba(56,189,248,0.2)] flex justify-center items-center">
-              <i class="fa-solid fa-house mr-2"></i> Return to Base
-            </a>
-            <a href="/contact" class="bg-transparent border border-gray-600 hover:border-gray-400 hover:text-white text-gray-300 font-bold py-3.5 px-8 rounded-lg transition-all w-full sm:w-auto flex justify-center items-center">
-              <i class="fa-solid fa-headset mr-2"></i> Contact Operations
-            </a>
-          </div>
-        </div>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="/" class="bg-bds-accent hover:bg-bds-accentHover text-bds-bg font-bold py-3.5 px-10 rounded-lg transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(56,189,248,0.2)] flex justify-center items-center">
+          <i class="fa-solid fa-house mr-2"></i> Return to Base
+        </a>
+        <a href="/contact" class="bg-transparent border border-gray-600 hover:border-gray-400 hover:text-white text-gray-300 font-bold py-3.5 px-10 rounded-lg transition-all w-full sm:w-auto flex justify-center items-center">
+          <i class="fa-solid fa-satellite-dish mr-2"></i> Request Scan
+        </a>
       </div>
     </div>
 

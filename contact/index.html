@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Contact | BlackWood Digital Services</title>
+  
+  <link rel="icon" href="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { 
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            bds: {
+              bg: '#020617',       
+              card: '#0f172a',     
+              border: '#1e293b',   
+              accent: '#38bdf8',   
+              accentHover: '#0ea5e9'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #020617; color: #f8fafc; }
+    
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .hero-glow {
+      background: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+    }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+    /* Custom Input Styling */
+    .secure-input {
+        background-color: rgba(2, 6, 23, 0.5);
+        border: 1px solid #1e293b;
+        color: white;
+        transition: all 0.3s ease;
+    }
+    .secure-input:focus {
+        outline: none;
+        border-color: #38bdf8;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+    }
+  </style>
+</head>
+<body class="font-sans flex flex-col min-h-screen bg-grid">
+
+  <nav class="bg-bds-bg/95 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-lg sticky top-0 z-50 border-b border-bds-border">
+    <a href="/" class="flex items-center space-x-3 group">
+      <img src="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" alt="BDS Logo" class="h-10 transition-transform group-hover:scale-105">
+      <div class="font-bold text-lg tracking-wider text-white hidden lg:block">BlackWood Digital</div>
+    </a>
+    
+    <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white transition-colors text-2xl"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="hidden md:flex items-center space-x-7 text-sm font-semibold tracking-wide">
+      <a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a>
+      <a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
+      <a href="/services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+      <a href="/industries" class="text-gray-400 hover:text-white transition-colors">Industries</a>
+      <a href="/casework" class="text-gray-400 hover:text-white transition-colors">Casework</a>
+      <a href="/contact" class="text-white border-b-2 border-bds-accent pb-1">Contact</a>
+      <div class="w-px h-5 bg-white/20 mx-2"></div>
+      <a href="https://tylernicholasgroup.com/companies/" class="flex items-center text-gray-400 hover:text-white group transition-colors">
+        <i class="fa-solid fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition-transform text-xs"></i>TNG Companies
+      </a>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden bg-bds-card border-b border-bds-border px-6 py-6 flex flex-col space-y-5 text-white text-base font-medium md:hidden absolute w-full z-40 shadow-xl top-[73px]">
+    <a href="/" class="hover:text-gray-300">Home</a>
+    <a href="/about" class="hover:text-gray-300">About</a>
+    <a href="/services" class="hover:text-gray-300">Services</a>
+    <a href="/industries" class="hover:text-gray-300">Industries</a>
+    <a href="/casework" class="hover:text-gray-300">Casework</a>
+    <a href="/contact" class="text-bds-accent">Contact</a>
+    <div class="border-t border-bds-border pt-4 mt-2">
+      <a href="https://tylernicholasgroup.com/companies/" class="text-gray-400 hover:text-white flex items-center">
+        <i class="fa-solid fa-arrow-left mr-2 text-sm"></i> Back to TNG Companies
+      </a>
+    </div>
+  </div>
+
+  <main class="flex-grow w-full flex flex-col items-center">
+    
+    <header class="w-full pt-20 pb-10 flex items-center justify-center px-6 relative overflow-hidden hero-glow border-b border-bds-border">
+      <div class="max-w-4xl text-center z-10" data-aos="fade-up">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-white leading-tight">
+          Secure <span class="text-transparent bg-clip-text bg-gradient-to-r from-bds-accent to-blue-600">Communications.</span>
+        </h1>
+        <p class="text-gray-400 leading-relaxed max-w-2xl mx-auto font-light text-sm md:text-base">
+          All inquiries are routed through our encrypted, token-based ticketing system to ensure absolute client confidentiality and data security.
+        </p>
+      </div>
+    </header>
+
+    <section class="w-full max-w-4xl mx-auto px-6 py-12 flex-grow flex flex-col">
+        
+        <div class="flex bg-bds-bg border border-bds-border rounded-xl p-1 mb-8" data-aos="fade-up" data-aos-delay="100">
+            <button id="tab-new" onclick="switchTab('new')" class="flex-1 py-3 text-sm font-bold rounded-lg transition-colors bg-bds-card text-white shadow-sm">Open New Case</button>
+            <button id="tab-access" onclick="switchTab('access')" class="flex-1 py-3 text-sm font-bold rounded-lg transition-colors text-gray-500 hover:text-white">Access Existing Case</button>
+        </div>
+
+        <div id="view-new-ticket" class="bg-bds-card border border-bds-border rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="mb-8 border-l-4 border-bds-accent pl-4">
+                <h3 class="text-white font-bold text-lg mb-1">Initiate Secure Contact</h3>
+                <p class="text-gray-400 text-sm">Upon submission, an unrecoverable cryptographic token will be generated and downloaded to your device. You must retain this token to access our response.</p>
+            </div>
+            
+            <form id="new-ticket-form" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Alias / Entity Name *</label>
+                        <input type="text" id="nt-name" required class="w-full secure-input rounded-lg px-4 py-3 text-sm" placeholder="How should we refer to you?">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Email Address <span class="text-gray-600 lowercase tracking-normal font-normal">(Optional)</span></label>
+                        <input type="email" id="nt-email" class="w-full secure-input rounded-lg px-4 py-3 text-sm" placeholder="For external notifications">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Subject / Incident Type *</label>
+                    <input type="text" id="nt-subject" required class="w-full secure-input rounded-lg px-4 py-3 text-sm" placeholder="e.g., Discord Community Raid, IP Takedown">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Operational Details *</label>
+                    <textarea id="nt-message" required rows="6" class="w-full secure-input rounded-lg px-4 py-3 text-sm" placeholder="Provide as much detail as possible. Do not include passwords."></textarea>
+                </div>
+                <div class="pt-4 border-t border-bds-border flex justify-end">
+                    <button type="submit" id="nt-submit-btn" class="bg-bds-accent hover:bg-bds-accentHover text-bds-bg font-bold py-3.5 px-8 rounded-lg transition-all shadow-[0_0_15px_rgba(56,189,248,0.3)] flex items-center">
+                        <i class="fa-solid fa-lock mr-2"></i> Encrypt & Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="view-success" class="hidden bg-bds-card border border-green-500/30 rounded-2xl p-10 text-center shadow-xl">
+            <div class="w-20 h-20 bg-green-500/10 border border-green-500/50 rounded-full flex items-center justify-center text-green-400 text-3xl mx-auto mb-6">
+                <i class="fa-solid fa-check-double"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Case Initiated Successfully</h2>
+            <p class="text-gray-400 text-sm mb-8">A secure text file containing your access token has been automatically downloaded to your device.</p>
+            
+            <div class="bg-bds-bg border border-bds-border rounded-lg p-6 mb-8 max-w-md mx-auto relative group">
+                <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-2">Your Access Token</p>
+                <p id="generated-token" class="text-bds-accent font-mono text-xl tracking-widest break-all select-all"></p>
+                <div class="absolute inset-0 bg-bds-bg/80 backdrop-blur-[1px] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button onclick="copyToken()" class="bg-white text-bds-bg text-xs font-bold px-4 py-2 rounded">Copy to Clipboard</button>
+                </div>
+            </div>
+
+            <div class="bg-red-500/10 border-l-4 border-red-500 p-4 text-left text-sm text-gray-300 max-w-xl mx-auto mb-8">
+                <i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>
+                <strong class="text-white">WARNING:</strong> Do not lose this token. BlackWood Digital Services cannot recover lost tokens. If lost, you will need to open a new case.
+            </div>
+
+            <button onclick="switchTab('access')" class="text-bds-accent font-bold hover:text-white transition-colors text-sm uppercase tracking-wider">
+                Proceed to Secure Portal <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+        </div>
+
+        <div id="view-access-ticket" class="hidden bg-bds-card border border-bds-border rounded-2xl p-8 shadow-xl">
+            <div class="max-w-md mx-auto text-center py-10">
+                <i class="fa-solid fa-terminal text-4xl text-bds-accent mb-6 opacity-50"></i>
+                <h3 class="text-white font-bold text-xl mb-2">Access Secure Portal</h3>
+                <p class="text-gray-400 text-sm mb-8">Enter your 16-character reference token to decrypt and view your active case communications.</p>
+                
+                <form id="access-form" class="space-y-4">
+                    <input type="text" id="access-token-input" required class="w-full secure-input rounded-lg px-4 py-4 text-center font-mono tracking-widest uppercase text-bds-accent placeholder:text-gray-600 placeholder:tracking-normal placeholder:font-sans" placeholder="BDS-XXXX-XXXX-XXXX">
+                    <p id="access-error" class="text-red-400 text-xs font-bold hidden"></p>
+                    <button type="submit" id="access-submit-btn" class="w-full bg-bds-bg border border-bds-accent text-bds-accent hover:bg-bds-accent hover:text-bds-bg font-bold py-3.5 rounded-lg transition-all">
+                        Authenticate
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="view-chat" class="hidden flex-col h-[600px] bg-bds-card border border-bds-border rounded-2xl overflow-hidden shadow-xl">
+            <div class="bg-bds-bg border-b border-bds-border p-5 flex justify-between items-center shrink-0">
+                <div>
+                    <h3 id="chat-subject" class="text-white font-bold text-lg leading-tight"></h3>
+                    <p class="text-xs text-gray-500 font-mono mt-1">Ref: <span id="chat-ref-display" class="text-gray-400"></span></p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div id="chat-status" class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded border border-green-500/30 text-green-400 bg-green-500/10">Open</div>
+                    <button onclick="closeTicket()" id="close-ticket-btn" class="text-xs text-red-400 hover:text-red-300 font-bold border border-red-500/30 px-3 py-1 rounded bg-red-500/10 transition-colors">Close Case</button>
+                    <button onclick="switchTab('access')" class="text-gray-400 hover:text-white"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
+            </div>
+
+            <div id="chat-messages" class="flex-grow overflow-y-auto p-6 space-y-6 bg-[#060b19]">
+                </div>
+
+            <div id="chat-input-area" class="bg-bds-bg border-t border-bds-border p-4 shrink-0">
+                <form id="reply-form" class="flex gap-3">
+                    <input type="text" id="reply-input" required class="flex-grow secure-input rounded-lg px-4 py-3 text-sm" placeholder="Type your secure response...">
+                    <button type="submit" id="reply-submit-btn" class="bg-bds-accent hover:bg-bds-accentHover text-bds-bg px-6 rounded-lg font-bold transition-all"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+  </main>
+
+  <footer class="bg-bds-card py-10 px-6 border-t border-bds-border mt-auto shrink-0">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-500">
+      <div class="flex items-center space-x-3 mb-4 md:mb-0">
+        <img src="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" alt="BDS Logo" class="h-8 opacity-70 grayscale hover:grayscale-0 transition-all">
+        <p>&copy; <span id="current-year"></span> BlackWood Digital Services.</p>
+      </div>
+      <div class="flex space-x-6">
+        <a href="https://tylernicholasgroup.com" class="hover:text-bds-accent transition-colors">A Tyler Nicholas Group Company</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // --- UI & Init ---
+    window.addEventListener('load', function() { AOS.init({ duration: 800, once: true, offset: 20 }); });
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+
+    // --- Supabase Config ---
+    const supabaseUrl = 'https://kkvjwmzlezrkwqiizkwp.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtrdmp3bXpsZXpya3dxaWl6a3dwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY5MzY2OTksImV4cCI6MjA5MjUxMjY5OX0.Oa44WwSsEhao79sLfkF4HA-dmDbVV3NeT9txvl83460';
+    let supabaseClient = null;
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const checkSupabase = setInterval(() => {
+            if (window.supabase) {
+                clearInterval(checkSupabase); 
+                supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+            }
+        }, 100); 
+    });
+
+    // --- Global State ---
+    let currentTicketId = null;
+    let currentToken = null;
+
+    // --- Tab Switching Logic ---
+    function switchTab(tab) {
+        const btnNew = document.getElementById('tab-new');
+        const btnAccess = document.getElementById('tab-access');
+        const vNew = document.getElementById('view-new-ticket');
+        const vSuccess = document.getElementById('view-success');
+        const vAccess = document.getElementById('view-access-ticket');
+        const vChat = document.getElementById('view-chat');
+
+        // Reset Styles
+        btnNew.className = 'flex-1 py-3 text-sm font-bold rounded-lg transition-colors text-gray-500 hover:text-white bg-transparent';
+        btnAccess.className = 'flex-1 py-3 text-sm font-bold rounded-lg transition-colors text-gray-500 hover:text-white bg-transparent';
+        
+        vNew.classList.add('hidden');
+        vSuccess.classList.add('hidden');
+        vAccess.classList.add('hidden');
+        vChat.classList.add('hidden');
+
+        if(tab === 'new') {
+            btnNew.className = 'flex-1 py-3 text-sm font-bold rounded-lg transition-colors bg-bds-card text-white shadow-sm';
+            vNew.classList.remove('hidden');
+        } else if (tab === 'access') {
+            btnAccess.className = 'flex-1 py-3 text-sm font-bold rounded-lg transition-colors bg-bds-card text-white shadow-sm';
+            vAccess.classList.remove('hidden');
+            // Reset state
+            currentTicketId = null;
+            document.getElementById('access-token-input').value = '';
+            document.getElementById('access-error').classList.add('hidden');
+        }
+    }
+
+    // --- Generate Crypto Token ---
+    function generateToken() {
+        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Removed confusing chars like I,1,O,0
+        let token = 'BDS-';
+        for (let i = 0; i < 3; i++) {
+            let block = '';
+            for (let j = 0; j < 4; j++) { block += chars.charAt(Math.floor(Math.random() * chars.length)); }
+            token += block + (i < 2 ? '-' : '');
+        }
+        return token;
+    }
+
+    // --- Handle New Ticket Submission ---
+    document.getElementById('new-ticket-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if(!supabaseClient) return alert('Database not connected yet.');
+        
+        const btn = document.getElementById('nt-submit-btn');
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Encrypting...';
+        btn.disabled = true;
+
+        const name = document.getElementById('nt-name').value;
+        const email = document.getElementById('nt-email').value;
+        const subject = document.getElementById('nt-subject').value;
+        const message = document.getElementById('nt-message').value;
+        const token = generateToken();
+
+        try {
+            // 1. Insert Ticket
+            const { data: ticketData, error: ticketError } = await supabaseClient
+                .from('bds_tickets')
+                .insert([{ reference_token: token, client_name: name, contact_email: email, subject: subject, status: 'open' }])
+                .select('id').single();
+
+            if (ticketError) throw ticketError;
+
+            // 2. Insert Initial Message
+            const { error: msgError } = await supabaseClient
+                .from('bds_ticket_messages')
+                .insert([{ ticket_id: ticketData.id, sender_role: 'client', message: message }]);
+
+            if (msgError) throw msgError;
+
+            // 3. Download Token File
+            const fileContent = `=======================================\nBLACKWOOD DIGITAL SERVICES - ACCESS TOKEN\n=======================================\n\nSUBJECT: ${subject}\nDATE: ${new Date().toLocaleString()}\n\nYOUR UNRECOVERABLE ACCESS TOKEN:\n${token}\n\nDo not share this file. If lost, you will need to open a new case.\nAccess Portal: https://bds.tylernicholasgroup.com/contact`;
+            const blob = new Blob([fileContent], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `BDS_Token_${token}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            // 4. Show Success Screen
+            document.getElementById('view-new-ticket').classList.add('hidden');
+            document.getElementById('view-success').classList.remove('hidden');
+            document.getElementById('generated-token').innerText = token;
+            currentToken = token;
+
+            // Reset form
+            e.target.reset();
+
+        } catch (error) {
+            console.error(error);
+            alert("An error occurred during secure transmission. Please try again.");
+        } finally {
+            btn.innerHTML = '<i class="fa-solid fa-lock mr-2"></i> Encrypt & Submit';
+            btn.disabled = false;
+        }
+    });
+
+    // --- Copy Token utility ---
+    function copyToken() {
+        navigator.clipboard.writeText(currentToken);
+        alert('Token copied to clipboard.');
+    }
+
+    // --- Handle Access Existing Ticket ---
+    document.getElementById('access-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const inputStr = document.getElementById('access-token-input').value.trim().toUpperCase();
+        const errEl = document.getElementById('access-error');
+        const btn = document.getElementById('access-submit-btn');
+
+        errEl.classList.add('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Authenticating...';
+        btn.disabled = true;
+
+        try {
+            const { data: ticket, error } = await supabaseClient
+                .from('bds_tickets')
+                .select('*')
+                .eq('reference_token', inputStr)
+                .single();
+
+            if (error || !ticket) {
+                errEl.innerText = "Invalid token or ticket not found.";
+                errEl.classList.remove('hidden');
+            } else {
+                currentTicketId = ticket.id;
+                await loadChatInterface(ticket);
+            }
+        } catch (err) {
+            console.error(err);
+            errEl.innerText = "Connection error. Please try again.";
+            errEl.classList.remove('hidden');
+        } finally {
+            btn.innerHTML = 'Authenticate';
+            btn.disabled = false;
+        }
+    });
+
+    // --- Render Chat Interface ---
+    async function loadChatInterface(ticket) {
+        document.getElementById('view-access-ticket').classList.add('hidden');
+        document.getElementById('view-chat').classList.remove('hidden');
+        document.getElementById('view-chat').classList.add('flex'); // necessary since we toggle display
+
+        document.getElementById('chat-subject').innerText = ticket.subject;
+        document.getElementById('chat-ref-display').innerText = ticket.reference_token;
+        
+        const statusEl = document.getElementById('chat-status');
+        const inputArea = document.getElementById('chat-input-area');
+        const closeBtn = document.getElementById('close-ticket-btn');
+
+        if(ticket.status === 'closed') {
+            statusEl.innerText = 'Closed';
+            statusEl.className = 'px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded border border-gray-500/30 text-gray-400 bg-gray-500/10';
+            inputArea.classList.add('hidden');
+            closeBtn.classList.add('hidden');
+        } else {
+            statusEl.innerText = 'Open';
+            statusEl.className = 'px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded border border-green-500/30 text-green-400 bg-green-500/10';
+            inputArea.classList.remove('hidden');
+            closeBtn.classList.remove('hidden');
+        }
+
+        await fetchMessages();
+    }
+
+    async function fetchMessages() {
+        const { data: messages, error } = await supabaseClient
+            .from('bds_ticket_messages')
+            .select('*')
+            .eq('ticket_id', currentTicketId)
+            .order('created_at', { ascending: true });
+
+        const container = document.getElementById('chat-messages');
+        if (error) {
+            container.innerHTML = `<p class="text-red-500 text-center">Error loading messages.</p>`;
+            return;
+        }
+
+        container.innerHTML = messages.map(msg => {
+            const time = new Date(msg.created_at).toLocaleString([], {hour: '2-digit', minute:'2-digit', month:'short', day:'numeric'});
+            
+            if (msg.sender_role === 'staff') {
+                return `
+                <div class="flex justify-start">
+                    <div class="max-w-[85%]">
+                        <p class="text-[10px] font-bold text-bds-accent mb-1 uppercase tracking-wider pl-1"><i class="fa-solid fa-shield-halved mr-1"></i> BlackWood Operations</p>
+                        <div class="bg-bds-bg border border-bds-accent/50 text-white p-4 rounded-2xl rounded-tl-sm shadow-md text-sm leading-relaxed whitespace-pre-wrap">${msg.message}</div>
+                        <p class="text-[10px] text-gray-600 mt-1 pl-1">${time}</p>
+                    </div>
+                </div>`;
+            } else {
+                return `
+                <div class="flex justify-end">
+                    <div class="max-w-[85%]">
+                        <p class="text-[10px] font-bold text-gray-400 mb-1 uppercase tracking-wider text-right pr-1">Client Alias</p>
+                        <div class="bg-gray-800 text-white p-4 rounded-2xl rounded-tr-sm shadow-md text-sm leading-relaxed whitespace-pre-wrap">${msg.message}</div>
+                        <p class="text-[10px] text-gray-600 mt-1 text-right pr-1">${time}</p>
+                    </div>
+                </div>`;
+            }
+        }).join('');
+
+        // Auto scroll to bottom
+        container.scrollTop = container.scrollHeight;
+    }
+
+    // --- Handle Sending a Reply ---
+    document.getElementById('reply-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = document.getElementById('reply-input');
+        const text = input.value.trim();
+        if(!text) return;
+        
+        input.disabled = true;
+
+        try {
+            const { error } = await supabaseClient
+                .from('bds_ticket_messages')
+                .insert([{ ticket_id: currentTicketId, sender_role: 'client', message: text }]);
+            
+            if(!error) {
+                input.value = '';
+                await fetchMessages();
+            }
+        } catch (err) {
+            console.error(err);
+        } finally {
+            input.disabled = false;
+            input.focus();
+        }
+    });
+
+    // --- Handle Closing Ticket ---
+    async function closeTicket() {
+        if(!confirm("Are you sure you want to close this case? You will not be able to reply further.")) return;
+        
+        try {
+            await supabaseClient.from('bds_tickets').update({ status: 'closed' }).eq('id', currentTicketId);
+            // Reload the interface to reflect closed state
+            const { data: ticket } = await supabaseClient.from('bds_tickets').select('*').eq('id', currentTicketId).single();
+            await loadChatInterface(ticket);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+  </script>
+</body>
+</html>

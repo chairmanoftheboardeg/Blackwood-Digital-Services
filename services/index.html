@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | BlackWood Digital Services</title>
+  
+  <link rel="icon" href="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], },
+          colors: {
+            bds: {
+              bg: '#020617',       
+              card: '#0f172a',     
+              border: '#1e293b',   
+              accent: '#38bdf8',   
+              accentHover: '#0ea5e9'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { background-color: #020617; color: #f8fafc; }
+    
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    .hero-glow {
+      background: radial-gradient(circle at 50% -20%, rgba(56, 189, 248, 0.1) 0%, rgba(2, 6, 23, 0) 70%);
+    }
+    
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+  </style>
+</head>
+<body class="font-sans flex flex-col min-h-screen bg-grid">
+
+  <nav class="bg-bds-bg/95 backdrop-blur-md py-4 px-6 md:px-12 flex justify-between items-center shadow-lg sticky top-0 z-50 border-b border-bds-border">
+    
+    <a href="/" class="flex items-center space-x-3 group">
+      <img src="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" alt="BDS Logo" class="h-10 transition-transform group-hover:scale-105">
+      <div class="font-bold text-lg tracking-wider text-white hidden lg:block">
+        BlackWood Digital
+      </div>
+    </a>
+    
+    <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white transition-colors text-2xl">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="hidden md:flex items-center space-x-7 text-sm font-semibold tracking-wide">
+      <a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a>
+      <a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
+      <a href="/services" class="text-white border-b-2 border-bds-accent pb-1">Services</a>
+      <a href="/industries" class="text-gray-400 hover:text-white transition-colors">Industries</a>
+      <a href="/casework" class="text-gray-400 hover:text-white transition-colors">Casework</a>
+      <a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+      
+      <div class="w-px h-5 bg-white/20 mx-2"></div>
+
+      <a href="https://tylernicholasgroup.com/companies/" class="flex items-center text-gray-400 hover:text-white group transition-colors">
+        <i class="fa-solid fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition-transform text-xs"></i>
+        TNG Companies
+      </a>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden bg-bds-card border-b border-bds-border px-6 py-6 flex flex-col space-y-5 text-white text-base font-medium md:hidden absolute w-full z-40 shadow-xl top-[73px]">
+    <a href="/" class="hover:text-gray-300">Home</a>
+    <a href="/about" class="hover:text-gray-300">About</a>
+    <a href="/services" class="text-bds-accent">Services</a>
+    <a href="/industries" class="hover:text-gray-300">Industries</a>
+    <a href="/casework" class="hover:text-gray-300">Casework</a>
+    <a href="/contact" class="hover:text-gray-300">Contact</a>
+    <div class="border-t border-bds-border pt-4 mt-2">
+      <a href="https://tylernicholasgroup.com/companies/" class="text-gray-400 hover:text-white flex items-center">
+        <i class="fa-solid fa-arrow-left mr-2 text-sm"></i> Back to TNG Companies
+      </a>
+    </div>
+  </div>
+
+  <main class="flex-grow w-full flex flex-col items-center">
+    
+    <header class="w-full pt-24 pb-16 flex items-center justify-center px-6 relative overflow-hidden hero-glow border-b border-bds-border">
+      <div class="max-w-4xl text-center z-10" data-aos="fade-up">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight text-white leading-tight">
+          Operational <span class="text-transparent bg-clip-text bg-gradient-to-r from-bds-accent to-blue-600">Capabilities.</span>
+        </h1>
+        <p class="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto font-light">
+          From deploying embedded moderation teams to executing complex IP takedowns, we provide the infrastructure necessary to protect your digital footprint.
+        </p>
+      </div>
+    </header>
+
+    <section class="w-full max-w-6xl px-6 py-24 space-y-12">
+      
+      <div class="bg-bds-card border border-bds-border rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center hover:border-bds-accent/30 transition-colors" data-aos="fade-up">
+        <div class="w-20 h-20 shrink-0 bg-bds-bg border border-bds-border rounded-xl flex items-center justify-center text-bds-accent text-3xl shadow-inner">
+          <i class="fa-solid fa-users-gear"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-3">Trust & Safety Operations</h2>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            We provide structured, 24/7 moderation and policy enforcement for virtual platforms, creator ecosystems, and high-volume Discord communities. Our operatives act as an invisible shield, filtering out toxicity, spam, and coordinated abuse so your community can thrive uninterrupted.
+          </p>
+          <ul class="text-sm font-semibold text-gray-500 flex flex-wrap gap-4">
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Discord Server Moderation</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Content Filtering</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Policy Drafting</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-bds-card border border-bds-border rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center hover:border-bds-accent/30 transition-colors" data-aos="fade-up">
+        <div class="w-20 h-20 shrink-0 bg-bds-bg border border-bds-border rounded-xl flex items-center justify-center text-bds-accent text-3xl shadow-inner">
+          <i class="fa-solid fa-copyright"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-3">Copyright & IP Enforcement</h2>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            When your intellectual property is stolen, leaked, or unlawfully replicated, we take action. We track unauthorized distribution of your digital assets, file DMCA takedowns, and liaise with hosting providers to remove infringing content quickly and permanently.
+          </p>
+          <ul class="text-sm font-semibold text-gray-500 flex flex-wrap gap-4">
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> DMCA Takedown Management</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Leak Containment</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Brand Impersonation Removal</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-bds-card border border-bds-border rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center hover:border-bds-accent/30 transition-colors" data-aos="fade-up">
+        <div class="w-20 h-20 shrink-0 bg-bds-bg border border-bds-border rounded-xl flex items-center justify-center text-bds-accent text-3xl shadow-inner">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-3">Investigative Support</h2>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            Operating in the dark requires a light. We conduct deep-dive investigations into platform abuse, identifying threat actors, tracking coordinated harassment campaigns, and gathering the necessary digital evidence required to secure your environment or pursue further action.
+          </p>
+          <ul class="text-sm font-semibold text-gray-500 flex flex-wrap gap-4">
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Threat Actor Identification</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Incident Forensics</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Network Mapping</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-bds-card border border-bds-border rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center hover:border-bds-accent/30 transition-colors" data-aos="fade-up">
+        <div class="w-20 h-20 shrink-0 bg-bds-bg border border-bds-border rounded-xl flex items-center justify-center text-bds-accent text-3xl shadow-inner">
+          <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-3">Dispute Resolution & Asset Protection</h2>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            Disputes within communities or development teams can bring operations to a halt. We provide objective, structured dispute resolution to restore continuity. Furthermore, we audit and protect your digital infrastructure to prevent unauthorized access and secure critical business data.
+          </p>
+          <ul class="text-sm font-semibold text-gray-500 flex flex-wrap gap-4">
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Internal Mediation</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Infrastructure Auditing</li>
+            <li><i class="fa-solid fa-check text-bds-accent mr-2"></i> Access Control Setup</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="w-full bg-gradient-to-b from-bds-card to-bds-bg border-t border-bds-border py-24">
+      <div class="max-w-4xl mx-auto px-6 text-center" data-aos="zoom-in">
+        <div class="inline-block mb-6">
+          <i class="fa-solid fa-hand-holding-heart text-5xl text-bds-accent drop-shadow-[0_0_15px_rgba(56,189,248,0.5)]"></i>
+        </div>
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+          Enterprise-Grade Protection. <br> <span class="text-bds-accent">Accessible to All.</span>
+        </h2>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+          We believe that robust security, professional moderation, and operational oversight should not be locked behind prohibitive corporate contracts. 
+        </p>
+        <div class="bg-bds-bg border border-bds-accent/30 p-6 md:p-8 rounded-xl text-left mb-10 shadow-lg relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-1 h-full bg-bds-accent"></div>
+          <p class="text-gray-400 leading-relaxed">
+            BlackWood Digital Services is proud to offer <strong class="text-white">extremely affordable pricing structures</strong> tailored to the scale of your specific project. In certain scenarios—such as supporting vulnerable groups, non-profits, or highly impactful community projects—<strong class="text-white">we provide our services completely free of charge.</strong>
+          </p>
+        </div>
+        
+        <h3 class="text-2xl font-bold text-white mb-8">Reach out now and let us know how we can help you.</h3>
+        
+        <a href="/contact" class="inline-block bg-bds-accent hover:bg-bds-accentHover text-bds-bg font-bold py-4 px-12 rounded-lg transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(56,189,248,0.4)] text-lg">
+          Contact Us Today
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-bds-card py-10 px-6 border-t border-bds-border mt-auto">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs font-medium text-gray-500">
+      <div class="flex items-center space-x-3 mb-4 md:mb-0">
+        <img src="https://i.ibb.co/ZRT8vbbc/Blackwood-Digital-Services.png" alt="BDS Logo" class="h-8 opacity-70 grayscale hover:grayscale-0 transition-all">
+        <p>&copy; <span id="current-year"></span> BlackWood Digital Services.</p>
+      </div>
+      <div class="flex space-x-6">
+        <a href="https://tylernicholasgroup.com/privacy/" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="https://tylernicholasgroup.com/terms/" class="hover:text-white transition-colors">Terms of Service</a>
+        <a href="https://tylernicholasgroup.com" class="hover:text-bds-accent transition-colors">A Tyler Nicholas Group Company</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      AOS.init({ duration: 800, once: true, offset: 20 });
+    });
+
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+
+    document.getElementById('current-year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
